@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data KTP Responsif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Form Data KTP dan Tabel Responsif</h2>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-container">
+            <form id="ktpForm">
+                <!-- Nama Lengkap -->
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" required>
+                    <div class="error-message" id="namaError"></div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <!-- Jenis Kelamin -->
+                <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" id="pria" name="gender" value="Pria" required>
+                            <label for="pria">Pria</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="wanita" name="gender" value="Wanita">
+                            <label for="wanita">Wanita</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alamat -->
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <textarea id="alamat" name="alamat" rows="4" required></textarea>
+                    <div class="error-message" id="alamatError"></div>
+                </div>
+                
+
+                <!-- Status Perkawinan -->
+                <div class="form-group">
+                    <label for="status">Status Perkawinan</label>
+                    <select id="status" name="status" required>
+                        <option value="" disabled selected>Pilih Status</option>
+                        <option value="Belum Menikah">Belum Menikah</option>
+                        <option value="Menikah">Menikah</option>
+                        <option value="Cerai">Cerai</option>
+                    </select>
+                </div>
+
+                <!-- Minat (Checkbox) -->
+                <div class="form-group">
+                    <label>Minat</label>
+                    <div class="checkbox-group">
+                        <div>
+                            <input type="checkbox" id="minatTeknologi" name="minat[]" value="Teknologi">
+                            <label for="minatTeknologi">Teknologi</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="minatOlahraga" name="minat[]" value="Olahraga">
+                            <label for="minatOlahraga">Olahraga</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="minatSeni" name="minat[]" value="Seni">
+                            <label for="minatSeni">Seni</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nomor KTP -->
+                <div class="form-group">
+                    <label for="nomorKTP">Nomor KTP</label>
+                    <input type="text" id="nomorKTP" name="nomorKTP" pattern="[0-9]{16}" title="Harus 16 digit angka" required>
+                    <div class="error-message" id="ktpError"></div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Table Section -->
+        <div class="display" id="displayData">
+            <h1>
+                Hasil :
+            </h1>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
